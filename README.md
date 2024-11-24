@@ -23,7 +23,8 @@ cd graphql
 node server.js
 ```
 
-You are ready to use: http://localhost:3000/
+You are ready to use: http://localhost:3000/\
+or You can check it at: https://hamapall.github.io/graphql/
 
 ## Audit
 
