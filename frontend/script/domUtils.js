@@ -33,7 +33,11 @@ export function setupLogout() {
             localStorage.removeItem("username");
             showNotification("It was nice to see you! Come back soon!");
             setTimeout(() => {
-                window.location.replace("/");
+                if (location.href.includes("/graphql")) {
+                    window.location.replace("/graphql/");
+                } else {
+                    window.location.replace("/");
+                }
             }, 1000);
         });
     }
