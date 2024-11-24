@@ -1,0 +1,345 @@
+/* Import fonts for styling */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&family=Outfit:wght@100..900&display=swap");
+
+:root {
+    --main-color: #2a3166;
+    --chart-background: #cae7df;
+    --chart-one: #ee7879;
+    --chart-two: #f4abaa;
+}
+
+/* General styles */
+* {
+    font-family: "Baloo Paaji 2", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color); /* Main background color */
+}
+
+/* Login Page Styling */
+#loginDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 5em;
+    color: var(--chart-two); /* Title color */
+    margin-top: -60px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -20px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#loginForm input:focus {
+    box-shadow: inset 0px 4px 6px rgba(85, 85, 85, 0.4); /* Input focus effect */
+    outline: none;
+}
+
+#loginForm button {
+    padding: 10px 15px;
+    color: var(--main-color);
+    background-color: var( --chart-background); /* Button color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+#loginForm button:hover {
+    background-color: var(--chart-two); /* Hover color */
+}
+
+/* Notifications */
+.notification,
+.error-notification {
+    position: fixed;
+    top: -100px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--main-color);
+    background-color: var(--chart-background); /* Default notification color */
+    transition: top 0.5s ease, opacity 0.5s ease; /* Show/hide animations */
+    z-index: 1000;
+    max-width: 300px;
+    font-size: 0.9rem;
+    opacity: 0;
+}
+
+.notification.show,
+.error-notification.show {
+    top: 10px;
+    opacity: 1;
+}
+
+.notification.hide,
+.error-notification.hide {
+    top: -100px;
+    opacity: 0;
+}
+
+/* Header */
+.app-header {
+    color: aliceblue; /* Header text color */
+    margin-left: 2.4%;
+}
+
+/* Main Container */
+#mainContainer {
+    padding: 20px;
+}
+
+/* User Info and Charts */
+#userInfoContainer,
+#barChartContainer {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--chart-one);
+}
+
+#info, #proj {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+#proj > * {
+    flex: 1;
+}
+
+#barChartContainer {
+    background-color: var(--chart-background); /* Chart container background */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    #userInfoContainer,
+    #barChartContainer {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    #mainContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+  
+
+
+/* Chart Customizations */
+.bar-value {
+    font-size: 14px;
+    fill: var(--main-color); /* Bar text color */
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.x-axis path,
+.x-axis line,
+.y-axis path,
+.y-axis line {
+    fill: none;
+    shape-rendering: crispEdges; /* Clean axes rendering */
+}
+
+.x-axis text,
+.y-axis text {
+    font-size: 12px;
+    /* fill: #313632; /* Axis labels color */
+}
+
+.xp-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--main-color); /* XP Info color */
+    font-weight: bold;
+}
+
+/* Logout Button */
+#logoutDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+}
+
+#logoutButton {
+    margin-right: 1.7%;
+    color: var(--main-color);
+    background-color: var(--chart-background); /* Logout button background */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+#logoutButton:hover {
+    background-color: var(--chart-two); /* Hover color */
+}
+
+/* User Information */
+#userInfoContainer {
+    background-color: var(--chart-background); /* User Info box background */
+}
+
+.infoDiv {
+    border-radius: 8px;
+    padding: 16px;
+    width: 94%;
+    background-color: var(--chart-two); /* Info section background */
+}
+
+.mapDiv {
+    border-radius: 8px;
+    padding: 16px;
+    width: 94%;
+    height: 200px;
+    margin-top: 16px;
+}
+
+.userData {
+    font-size: 16px;
+    margin: 8px 0;
+    color: var(--main-color); /* Text color */
+}
+
+.userInfoHeader {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--main-color); /* Header color */
+}
+
+/* Projects Section */
+#projectsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.category-box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--chart-one);
+    border-radius: 8px;
+    background-color: var(--chart-two); /* Default background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.category-box:hover {
+    background-color: #ccc; /* Hover background */
+    box-shadow: inset 0px 4px 6px rgba(85, 85, 85, 0.4);
+    cursor: pointer
+}
+
+/* Pie Chart Section */
+#pieChartContainer {
+    display: flex;
+    align-items: center;
+}
+#pieChartContainer svg {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #projectsContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .category-box {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Popups */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+    color: var(--main-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 300px;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.popup button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--chart-one);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer
+}
+
+.popup button:hover {
+    background-color: var(--chart-two); /* Hover color */
+}
+
+/* Miscellaneous */
+button {
+    padding: 10px 15px;
+    cursor: pointer
+}
+
+h3 {
+    font-weight: 500; /* Subtitle style */
+}
